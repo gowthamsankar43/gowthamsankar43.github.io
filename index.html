@@ -3,554 +3,263 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gowtham M S - Azure Data Engineer</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <title>Azure Data Engineer Portfolio</title>
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --accent-color: #e74c3c;
-            --background-color: #ecf0f1;
-            --text-color: #34495e;
-            --card-bg-color: #ffffff;
+            --bg-color: #f0f8ff;
+            --text-color: #333;
+            --primary-color: #0078d4;
+            --secondary-color: #00a2ed;
+            --card-bg: #ffffff;
         }
 
-        [data-theme="dark"] {
-            --primary-color: #34495e;
-            --secondary-color: #3498db;
-            --accent-color: #e74c3c;
-            --background-color: #2c3e50;
-            --text-color: #ecf0f1;
-            --card-bg-color: #34495e;
+        .dark-theme {
+            --bg-color: #1e1e1e;
+            --text-color: #e0e0e0;
+            --primary-color: #0078d4;
+            --secondary-color: #00a2ed;
+            --card-bg: #2d2d2d;
         }
 
-        [data-theme="light"] {
-            --primary-color: #3498db;
-            --secondary-color: #2c3e50;
-            --accent-color: #e74c3c;
-            --background-color: #ecf0f1;
-            --text-color: #2c3e50;
-            --card-bg-color: #ffffff;
-        }
-
-        body, html {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+        body {
+            font-family: Arial, sans-serif;
             line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--background-color);
             margin: 0;
             padding: 0;
-            transition: all 0.3s ease;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
         }
 
         header {
             background-color: var(--primary-color);
-            color: white;
-            padding: 1rem;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            color: #ffffff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: var(--secondary-color) 3px solid;
+            position: relative;
         }
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .logo h1 {
+        header h1 {
             margin: 0;
-            font-size: 1.5rem;
+            text-align: center;
+            padding-bottom: 20px;
         }
 
-        .logo p {
-            margin: 0;
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-        nav ul {
-            display: flex;
-            padding: 0;
-            list-style-type: none;
-        }
-
-        nav ul li {
-            margin-left: 20px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            color: var(--accent-color);
-        }
-
-        main {
-            max-width: 1200px;
-            margin: 80px auto 0;
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
             padding: 20px;
         }
 
-        section {
-            margin-bottom: 60px;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-
-        section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        h2 {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--secondary-color);
-            padding-bottom: 10px;
+        #showcase {
+            background: url('/api/placeholder/800/400') no-repeat center center/cover;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #ffffff;
+            background-color: rgba(0, 120, 212, 0.7);
             margin-bottom: 20px;
         }
 
-        .project, .job {
-            background-color: var(--card-bg-color);
+        #showcase h2 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        #showcase p {
+            font-size: 20px;
+        }
+
+        .section {
+            padding: 20px;
+            background: var(--card-bg);
+            margin-top: 20px;
             border-radius: 8px;
-            padding: 25px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
 
-        .project:hover, .job:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        .section h2 {
+            text-align: center;
+            color: var(--primary-color);
         }
 
-        .skills-container {
+        #skills ul {
+            list-style-type: none;
+            padding: 0;
             display: flex;
+            justify-content: space-around;
             flex-wrap: wrap;
-            gap: 15px;
         }
 
-        .skill {
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            transition: all 0.3s ease;
+        #skills li {
+            background: var(--primary-color);
+            color: #ffffff;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
         }
 
-        .skill:hover {
-            background-color: var(--accent-color);
-            transform: scale(1.05);
+        #skills li:hover {
+            transform: translateY(-5px);
         }
 
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+        #projects .project {
+            background: var(--bg-color);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        #contact {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
         }
 
         .contact-item {
             text-align: center;
-            padding: 20px;
-            background-color: var(--card-bg-color);
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .contact-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .contact-item i {
-            font-size: 2em;
-            color: var(--secondary-color);
-            margin-bottom: 10px;
+            margin: 10px;
         }
 
         .contact-item a {
-            color: var(--text-color);
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: #ffffff;
             text-decoration: none;
-            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
         }
 
         .contact-item a:hover {
-            color: var(--secondary-color);
-        }
-
-        #about {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-        }
-
-        .profile-picture {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid var(--secondary-color);
-        }
-
-        .theme-switch-wrapper {
-            display: flex;
-            align-items: center;
-        }
-
-        .theme-switch {
-            display: inline-block;
-            height: 34px;
-            position: relative;
-            width: 60px;
-        }
-
-        .theme-switch input {
-            display:none;
-        }
-
-        .slider {
-            background-color: #ccc;
-            bottom: 0;
-            cursor: pointer;
-            left: 0;
-            position: absolute;
-            right: 0;
-            top: 0;
-            transition: .4s;
-        }
-
-        .slider:before {
-            background-color: #fff;
-            bottom: 4px;
-            content: "";
-            height: 26px;
-            left: 4px;
-            position: absolute;
-            transition: .4s;
-            width: 26px;
-        }
-
-        input:checked + .slider {
             background-color: var(--secondary-color);
         }
 
-        input:checked + .slider:before {
-            transform: translateX(26px);
-        }
-
-        .slider.round {
-            border-radius: 34px;
-        }
-
-        .slider.round:before {
+        #profile-photo {
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
+            margin: 0 auto 20px;
+            display: block;
+            object-fit: cover;
+            border: 4px solid var(--primary-color);
         }
 
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-            }
-            #about {
-                flex-direction: column;
-            }
-            .profile-picture {
-                width: 150px;
-                height: 150px;
-            }
+        #theme-toggle {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo">
-                <h1>Gowtham M S</h1>
-                <p>Azure Data Engineer</p>
-            </div>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="theme-switch-wrapper">
-                <label class="theme-switch" for="checkbox">
-                    <input type="checkbox" id="checkbox" />
-                    <div class="slider round"></div>
-                </label>
-            </div>
-        </nav>
+        <h1>Azure Data Engineer Portfolio</h1>
+        <button id="theme-toggle">Toggle Theme</button>
     </header>
-    
-    <main>
-        <section id="about">
-            <img src="IMG_20231231_113405_727.jpg" alt="Gowtham M S" class="profile-picture">
-            <div>
-                <h2>About Me</h2>
-                <p>Experienced Azure Data Engineer with 2.9 years of expertise in ETL pipelines using SQL, Azure Data Factory, Databricks, and Data Lake. Proficient in implementing end-to-end Azure pipelines using Azure DevOps and GitHub. Recognized for outstanding contributions and delivering high-quality outputs.</p>
-            </div>
+
+    <div class="container">
+        <section id="showcase">
+            <img id="profile-photo" src="/api/placeholder/200/200" alt="Your Name">
+            <h2>Your Name</h2>
+            <p>Azure Data Engineer | Big Data Specialist | Cloud Enthusiast</p>
         </section>
-        
-        <section id="skills">
+
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <p>I'm a passionate Azure Data Engineer with expertise in designing, implementing, and managing data solutions on the Microsoft Azure platform. My focus is on creating scalable and efficient data pipelines, data lakes, and analytics solutions to drive business insights.</p>
+        </section>
+
+        <section id="skills" class="section">
             <h2>Skills</h2>
-            <div class="skills-container">
-                <span class="skill">Azure Data Factory</span>
-                <span class="skill">Azure Synapse Analytics</span>
-                <span class="skill">Azure Databricks</span>
-                <span class="skill">Azure SQL Database</span>
-                <span class="skill">Azure Data Lake Storage</span>
-                <span class="skill">Python</span>
-                <span class="skill">SQL</span>
-                <span class="skill">Java</span>
-                <span class="skill">PySpark</span>
-                <span class="skill">Apache Kafka</span>
-                <span class="skill">Data Warehousing</span>
-                <span class="skill">ETL Processes</span>
-                <span class="skill">Power BI</span>
-                <span class="skill">Git</span>
-                <span class="skill">Azure DevOps</span>
-            </div>
+            <ul>
+                <li>Azure Data Factory</li>
+                <li>Azure Synapse Analytics</li>
+                <li>Azure Databricks</li>
+                <li>Azure SQL Database</li>
+                <li>Azure Data Lake Storage</li>
+                <li>Power BI</li>
+                <li>T-SQL</li>
+                <li>Python</li>
+                <li>Spark</li>
+                <li>Data Modeling</li>
+                <li>ETL/ELT Processes</li>
+                <li>Azure DevOps</li>
+            </ul>
         </section>
-        
-        <section id="projects">
+
+        <section id="projects" class="section">
             <h2>Projects</h2>
             <div class="project">
-                <h3>Pyspark End-To-End ETL project using Azure Databricks</h3>
-                <p>Complete Azure Databricks project, implemented with Factory pattern using Python and Spark. Utilized Unity catalog functionality and external locations in Azure Databricks. Worked with various file formats including Delta, Parquet, JSON, and CSV.</p>
-                <p><a href="https://github.com/gowthamsankar43/Spark_ETL_End_To_End" target="_target">View on GitHub <i class="fas fa-external-link-alt"></i></a></p>
+                <h3>Enterprise Data Lake Implementation</h3>
+                <p>Designed and implemented a scalable data lake solution using Azure Data Lake Storage Gen2 and Azure Databricks, enabling advanced analytics for a Fortune 500 company.</p>
             </div>
             <div class="project">
-                <h3>AzureEvent-Hubs Mini Project with Data Bricks</h3>
-                <p> Azure Event Hubs mini project with Unity Catalog enabled Azure Databricks.Implemented Spark Streaming libraries and Spark code to process near time streaming data. Results are stored in Delta tables</p>  
-                <p><a href="https://github.com/gowthamsankar43/Real_Time_Streaming_Analysis" target="_target">View on GitHub <i class="fas fa-external-link-alt"></i></a></p>
-            </div>
-            <div class="project">
-                <h3>Microsoft Fabric ETL Project with NYC Taxi Data</h3>
-                <p>Fabric End-To-End ETL Pipelines with Montly Incremental load with NewYork City Taxi Data , Implemented One lake Data lakehouse and Data Warehouse Functionalities, Data Flows gen2 and Fabric CICD</p>
-                <p><a href="https://github.com/gowthamsankar43/NYC_Taxi_Project_Fabric" target="_target">View on GitHub <i class="fas fa-external-link-alt"></i></a></p>
+                <h3>Real-time Data Pipeline</h3>
+                <p>Developed a real-time data ingestion and processing pipeline using Azure Event Hubs, Azure Stream Analytics, and Azure Synapse Analytics for IoT data analysis.</p>
             </div>
         </section>
-        
-        
-        
-        <section id="education">
-            <h2>Education</h2>
-            <div class="job">
-                <h3>Bachelor of Engineering in BME</h3>
-                <p>Sethu Institute of Technology, Anna University</p>
-                <p>Graduated: July 2021</p>
+
+        <section id="contact" class="section">
+            <h2>Contact Me</h2>
+            <div class="contact-item">
+                <a href="https://github.com/yourusername" target="_blank">GitHub Profile</a>
+            </div>
+            <div class="contact-item">
+                <a href="https://www.linkedin.com/in/yourusername" target="_blank">LinkedIn Profile</a>
+            </div>
+            <div class="contact-item">
+                <a href="mailto:your.email@example.com">Email Me</a>
             </div>
         </section>
-        
-        <section id="contact">
-            <h2>Contact</h2>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <p><a href="mailto:gowthamsankar42@gmail.com">gowthamsankar42@gmail.com</a></p>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-linkedin"></i>
-                    <p><a href="https://www.linkedin.com/in/gowtham-m-s/" target="_blank">LinkedIn Profile</a></p>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-github"></i>
-                    <p><a href="https://github.com/gowthamsankar43" target="_blank">GitHub Profile</a></p>
-                </div>
-            </div>
-        </section>
-    </main>
-    
-<script>
-    document.addEventListener('DOMContentLoaded', (event) => {
-        // Theme switcher
-        const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-        const currentTheme = localStorage.getItem('theme');
+    </div>
 
-        if (currentTheme) {
-            document.documentElement.setAttribute('data-theme', currentTheme);
-        
-            if (currentTheme === 'dark') {
-                toggleSwitch.checked = true;
-            }
-        }
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
 
-        function switchTheme(e) {
-            if (e.target.checked) {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                localStorage.setItem('theme', 'dark');
-            }
-            else {
-                document.documentElement.setAttribute('data-theme', 'light');
-                localStorage.setItem('theme', 'light');
-            }    
-        }
-
-        toggleSwitch.addEventListener('change', switchTheme, false);
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-theme');
+            themeToggle.textContent = body.classList.contains('dark-theme') ? 'Light Theme' : 'Dark Theme';
         });
 
-        // Intersection Observer for fade-in effect
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+        // Simple animation for skills
+        window.addEventListener('scroll', function() {
+            const skills = document.querySelectorAll('#skills li');
+            skills.forEach(skill => {
+                const skillPosition = skill.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                if (skillPosition < screenPosition) {
+                    skill.style.animation = 'fadeIn 1s forwards';
                 }
             });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('section').forEach(section => {
-            observer.observe(section);
         });
 
-        // Skill tag hover effect
-        const skills = document.querySelectorAll('.skill');
-        skills.forEach(skill => {
-            skill.addEventListener('mouseover', () => {
-                skill.style.transform = 'scale(1.1) rotate(2deg)';
-            });
-            skill.addEventListener('mouseout', () => {
-                skill.style.transform = 'scale(1) rotate(0deg)';
-            });
-        });
-
-        // Mobile navigation toggle
-        const navToggle = document.createElement('button');
-        navToggle.innerHTML = '&#9776;'; // Hamburger icon
-        navToggle.style.cssText = `
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5em;
-            cursor: pointer;
-            display: none;
+        // Add this CSS for the animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeIn {
+                0% { opacity: 0; transform: translateY(20px); }
+                100% { opacity: 1; transform: translateY(0); }
+            }
+            #skills li {
+                opacity: 0;
+            }
         `;
-        const nav = document.querySelector('nav');
-        nav.appendChild(navToggle);
-
-        const navList = document.querySelector('nav ul');
-
-        function toggleMobileNav() {
-            navList.style.display = navList.style.display === 'flex' ? 'none' : 'flex';
-        }
-
-        navToggle.addEventListener('click', toggleMobileNav);
-
-        function handleResize() {
-            if (window.innerWidth <= 768) {
-                navToggle.style.display = 'block';
-                navList.style.display = 'none';
-                navList.style.flexDirection = 'column';
-                navList.style.position = 'absolute';
-                navList.style.top = '100%';
-                navList.style.left = '0';
-                navList.style.width = '100%';
-                navList.style.backgroundColor = 'var(--primary-color)';
-            } else {
-                navToggle.style.display = 'none';
-                navList.style.display = 'flex';
-                navList.style.flexDirection = 'row';
-                navList.style.position = 'static';
-                navList.style.width = 'auto';
-                navList.style.backgroundColor = 'transparent';
-            }
-        }
-
-        window.addEventListener('resize', handleResize);
-        handleResize(); // Call once to set initial state
-
-        // Scroll-to-top button
-        const scrollTopBtn = document.createElement('button');
-        scrollTopBtn.innerHTML = '&#8593;'; // Up arrow
-        scrollTopBtn.style.cssText = `
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            font-size: 1.5em;
-            cursor: pointer;
-            display: none;
-            transition: opacity 0.3s ease;
-        `;
-        document.body.appendChild(scrollTopBtn);
-
-        function toggleScrollTopBtn() {
-            if (window.pageYOffset > 300) {
-                scrollTopBtn.style.display = 'block';
-                scrollTopBtn.style.opacity = '1';
-            } else {
-                scrollTopBtn.style.opacity = '0';
-                setTimeout(() => {
-                    scrollTopBtn.style.display = 'none';
-                }, 300);
-            }
-        }
-
-        window.addEventListener('scroll', toggleScrollTopBtn);
-
-        scrollTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Project card expand/collapse
-        const projects = document.querySelectorAll('.project');
-        projects.forEach(project => {
-            const content = project.querySelector('p');
-            const originalText = content.textContent;
-            const shortText = originalText.slice(0, 100) + '...';
-            
-            if (originalText.length > 100) {
-                content.textContent = shortText;
-                const expandBtn = document.createElement('button');
-                expandBtn.textContent = 'Read More';
-                expandBtn.style.cssText = `
-                    background: none;
-                    border: none;
-                    color: var(--secondary-color);
-                    cursor: pointer;
-                    font-weight: bold;
-                    padding: 0;
-                    margin-top: 10px;
-                `;
-                project.appendChild(expandBtn);
-
-                expandBtn.addEventListener('click', () => {
-                    if (content.textContent === shortText) {
-                        content.textContent = originalText;
-                        expandBtn.textContent = 'Read Less';
-                    } else {
-                        content.textContent = shortText;
-                        expandBtn.textContent = 'Read More';
-                    }
-                });
-            }
-        });
-    });
-</script>
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
