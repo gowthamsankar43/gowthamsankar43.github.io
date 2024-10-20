@@ -6,23 +6,27 @@
     <title>Azure Data Engineer Portfolio</title>
     <style>
         :root {
-            --bg-color: #f0f8ff;
-            --text-color: #333;
-            --primary-color: #0078d4;
-            --secondary-color: #00a2ed;
+            --bg-color: #f5f5f5;
+            --text-color: #333333;
+            --primary-color: #0062a6;
+            --secondary-color: #003e6b;
+            --accent-color: #00a9e0;
             --card-bg: #ffffff;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .dark-theme {
-            --bg-color: #1e1e1e;
+            --bg-color: #1a1a1a;
             --text-color: #e0e0e0;
             --primary-color: #0078d4;
-            --secondary-color: #00a2ed;
+            --secondary-color: #005a9e;
+            --accent-color: #00b7c3;
             --card-bg: #2d2d2d;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
@@ -34,86 +38,99 @@
         header {
             background-color: var(--primary-color);
             color: #ffffff;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: var(--secondary-color) 3px solid;
+            padding: 20px 0;
             position: relative;
         }
 
         header h1 {
             margin: 0;
             text-align: center;
-            padding-bottom: 20px;
+            font-size: 2.5em;
+            font-weight: 300;
         }
 
         .container {
-            width: 80%;
+            width: 90%;
+            max-width: 1200px;
             margin: auto;
             overflow: hidden;
-            padding: 20px;
+            padding: 40px 20px;
         }
 
         #showcase {
-            background: url('/api/placeholder/800/400') no-repeat center center/cover;
-            height: 300px;
+            background: linear-gradient(rgba(0, 62, 107, 0.8), rgba(0, 98, 166, 0.8)), url('/api/placeholder/1200/400') no-repeat center center/cover;
+            height: 400px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             color: #ffffff;
-            background-color: rgba(0, 120, 212, 0.7);
-            margin-bottom: 20px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
         }
 
         #showcase h2 {
-            font-size: 40px;
+            font-size: 2.5em;
             margin-bottom: 10px;
+            font-weight: 300;
         }
 
         #showcase p {
-            font-size: 20px;
+            font-size: 1.2em;
+            margin-bottom: 20px;
         }
 
         .section {
-            padding: 20px;
+            padding: 30px;
             background: var(--card-bg);
-            margin-top: 20px;
+            margin-bottom: 30px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: var(--card-shadow);
         }
 
         .section h2 {
-            text-align: center;
             color: var(--primary-color);
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            font-weight: 400;
         }
 
         #skills ul {
             list-style-type: none;
             padding: 0;
             display: flex;
-            justify-content: space-around;
             flex-wrap: wrap;
+            justify-content: flex-start;
         }
 
         #skills li {
-            background: var(--primary-color);
+            background: var(--accent-color);
             color: #ffffff;
-            padding: 10px 20px;
+            padding: 8px 16px;
             margin: 5px;
-            border-radius: 5px;
-            transition: transform 0.3s ease;
+            border-radius: 20px;
+            font-size: 0.9em;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         #skills li:hover {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         #projects .project {
             background: var(--bg-color);
             padding: 20px;
             margin-bottom: 20px;
-            border-radius: 5px;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+        }
+
+        #projects .project h3 {
+            color: var(--secondary-color);
+            margin-top: 0;
         }
 
         #contact {
@@ -134,33 +151,59 @@
             color: #ffffff;
             text-decoration: none;
             border-radius: 5px;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-weight: 500;
         }
 
         .contact-item a:hover {
             background-color: var(--secondary-color);
+            transform: translateY(-3px);
         }
 
         #profile-photo {
-            width: 200px;
-            height: 200px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
             margin: 0 auto 20px;
             display: block;
             object-fit: cover;
-            border: 4px solid var(--primary-color);
+            border: 4px solid #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         #theme-toggle {
             position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            border: none;
-            padding: 5px 10px;
+            top: 20px;
+            right: 20px;
+            background-color: transparent;
+            color: #ffffff;
+            border: 2px solid #ffffff;
+            padding: 8px 16px;
             cursor: pointer;
             border-radius: 5px;
+            font-size: 0.9em;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        #theme-toggle:hover {
+            background-color: #ffffff;
+            color: var(--primary-color);
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            #showcase {
+                height: auto;
+                padding: 40px 20px;
+            }
+            #showcase h2 {
+                font-size: 2em;
+            }
+            .section {
+                padding: 20px;
+            }
         }
     </style>
 </head>
@@ -172,18 +215,18 @@
 
     <div class="container">
         <section id="showcase">
-            <img id="profile-photo" src="/api/placeholder/200/200" alt="Your Name">
+            <img id="profile-photo" src="/api/placeholder/180/180" alt="Your Name">
             <h2>Your Name</h2>
-            <p>Azure Data Engineer | Big Data Specialist | Cloud Enthusiast</p>
+            <p>Azure Data Engineer | Big Data Specialist | Cloud Solutions Architect</p>
         </section>
 
         <section id="about" class="section">
             <h2>About Me</h2>
-            <p>I'm a passionate Azure Data Engineer with expertise in designing, implementing, and managing data solutions on the Microsoft Azure platform. My focus is on creating scalable and efficient data pipelines, data lakes, and analytics solutions to drive business insights.</p>
+            <p>As a seasoned Azure Data Engineer, I specialize in designing, implementing, and optimizing data solutions on the Microsoft Azure platform. With a strong foundation in big data technologies and cloud architecture, I excel at creating scalable and efficient data pipelines, data lakes, and analytics solutions that drive meaningful business insights and enable data-driven decision making.</p>
         </section>
 
         <section id="skills" class="section">
-            <h2>Skills</h2>
+            <h2>Technical Expertise</h2>
             <ul>
                 <li>Azure Data Factory</li>
                 <li>Azure Synapse Analytics</li>
@@ -197,23 +240,25 @@
                 <li>Data Modeling</li>
                 <li>ETL/ELT Processes</li>
                 <li>Azure DevOps</li>
+                <li>Data Governance</li>
+                <li>Performance Optimization</li>
             </ul>
         </section>
 
         <section id="projects" class="section">
-            <h2>Projects</h2>
+            <h2>Key Projects</h2>
             <div class="project">
                 <h3>Enterprise Data Lake Implementation</h3>
-                <p>Designed and implemented a scalable data lake solution using Azure Data Lake Storage Gen2 and Azure Databricks, enabling advanced analytics for a Fortune 500 company.</p>
+                <p>Led the design and implementation of a scalable data lake solution using Azure Data Lake Storage Gen2 and Azure Databricks for a Fortune 500 company. This project enabled advanced analytics capabilities, resulting in a 30% improvement in data processing efficiency and a 25% reduction in overall data management costs.</p>
             </div>
             <div class="project">
-                <h3>Real-time Data Pipeline</h3>
-                <p>Developed a real-time data ingestion and processing pipeline using Azure Event Hubs, Azure Stream Analytics, and Azure Synapse Analytics for IoT data analysis.</p>
+                <h3>Real-time IoT Data Pipeline</h3>
+                <p>Architected and developed a real-time data ingestion and processing pipeline leveraging Azure Event Hubs, Azure Stream Analytics, and Azure Synapse Analytics. This solution processes over 1 million IoT device data points per minute, providing real-time insights that improved operational efficiency by 40%.</p>
             </div>
         </section>
 
         <section id="contact" class="section">
-            <h2>Contact Me</h2>
+            <h2>Connect With Me</h2>
             <div class="contact-item">
                 <a href="https://github.com/yourusername" target="_blank">GitHub Profile</a>
             </div>
@@ -227,7 +272,6 @@
     </div>
 
     <script>
-        // Theme toggle functionality
         const themeToggle = document.getElementById('theme-toggle');
         const body = document.body;
 
@@ -236,7 +280,6 @@
             themeToggle.textContent = body.classList.contains('dark-theme') ? 'Light Theme' : 'Dark Theme';
         });
 
-        // Simple animation for skills
         window.addEventListener('scroll', function() {
             const skills = document.querySelectorAll('#skills li');
             skills.forEach(skill => {
@@ -248,7 +291,6 @@
             });
         });
 
-        // Add this CSS for the animation
         const style = document.createElement('style');
         style.textContent = `
             @keyframes fadeIn {
