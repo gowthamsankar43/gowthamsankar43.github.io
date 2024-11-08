@@ -289,21 +289,7 @@ img{
   border-radius: .5rem;
   z-index: var(--z-back);
 }
-.skills__html{
-  width: 50%;
-}
-.skills__css{
-  width: 45%;
-}
-.skills__js{
-  width: 40%;
-}
-.skills__ux{
-  width: 40%;
-}
-.skills__sql{
-  width: 15%;
-}
+
 .skills__img{
   border-radius: .5rem;
 }
