@@ -1,20 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="assets/css.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="assets/css.css">
+    
+    <!-- =====BOX ICONS===== -->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    
+    <title>Gowtham M S Portfolio</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/icon.jpg">
+    <style>
+        /* Certificate Zoom Styles */
+        .certificate-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            justify-content: center;
+            align-items: center;
+        }
 
-        <!-- =====BOX ICONS===== -->
-        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+        .certificate-modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
 
-        <title>Gowtham M S Portfolio</title>
-        <link rel="shortcut icon" type="image/x-icon" href="assets/img/icon.jpg">
-        <head> <meta http-equiv="refresh" content="1000" /> </head>
-    </head>
-    <body>
-        <!--===== HEADER =====-->
+        /* Responsive Adjustments */
+        @media screen and (max-width: 768px) {
+            .home {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .home__social {
+                justify-content: center;
+            }
+
+            .skills__container {
+                grid-template-columns: 1fr;
+            }
+
+            .work__container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Existing HTML content remains the same -->
+     <!--===== HEADER =====-->
 
         <!--=====<body>
         <script>
@@ -186,11 +226,76 @@
             <p>Hosting by Github   <i class="bx bxl-github"></i></p> 
         </footer>
 
+    <!-- Certificate Zoom Modal -->
+    <div id="certificateModal" class="certificate-modal">
+        <img id="modalCertificateImage" class="certificate-modal-content" src="">
+    </div>
 
-        <!--===== SCROLL REVEAL =====-->
-        <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        // Mobile Navigation Toggle
+        document.addEventListener('DOMContentLoaded', () => {
+            const navToggle = document.getElementById('nav-toggle');
+            const navMenu = document.getElementById('nav-menu');
+            
+            navToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('show');
+            });
 
-        <!--===== MAIN JS =====-->
-        <script src="assets/main.js"></script>
-    </body>
+            // Close menu when a nav link is clicked
+            document.querySelectorAll('.nav__link').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('show');
+                });
+            });
+
+            // Certificate Zoom Functionality
+            const certificates = document.querySelectorAll('.work__img img');
+            const modal = document.getElementById('certificateModal');
+            const modalImage = document.getElementById('modalCertificateImage');
+
+            certificates.forEach(cert => {
+                cert.addEventListener('click', () => {
+                    modalImage.src = cert.src;
+                    modal.style.display = 'flex';
+                });
+            });
+
+            // Close modal when clicking outside the image
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+
+            // Prevent zooming on inputs for mobile
+            const inputs = document.querySelectorAll('input, textarea');
+            inputs.forEach(input => {
+                input.addEventListener('focus', () => {
+                    document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale=1');
+                });
+                input.addEventListener('blur', () => {
+                    document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
+                });
+            });
+
+            // Scroll to Top Functionality
+            const scrollToTopBtn = document.createElement('div');
+            scrollToTopBtn.id = 'back2Top';
+            scrollToTopBtn.innerHTML = '↑';
+            scrollToTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            document.body.appendChild(scrollToTopBtn);
+
+            // Show/Hide Scroll to Top Button
+            window.addEventListener('scroll', () => {
+                scrollToTopBtn.style.display = window.pageYOffset > 300 ? 'block' : 'none';
+            });
+        });
+    </script>
+
+    <!-- Existing scripts -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="assets/main.js"></script>
+</body>
 </html>
