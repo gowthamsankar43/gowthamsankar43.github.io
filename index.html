@@ -2,108 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gowtham M S - Azure Data Engineer</title>
     <link rel="stylesheet" href="assets/css.css">
-    
-    <!-- =====BOX ICONS===== -->
-    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
-    
-    <title>Gowtham M S Portfolio</title>
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/icon.jpg">
-    <style>
-        /* Certificate Zoom Styles */
-        .certificate-modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.8);
-            justify-content: center;
-            align-items: center;
-        }
-
-        .certificate-modal-content {
-            max-width: 90%;
-            max-height: 90%;
-            object-fit: contain;
-        }
-
-        /* Responsive Adjustments */
-        @media screen and (max-width: 768px) {
-            .home {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .home__social {
-                justify-content: center;
-            }
-
-            .skills__container {
-                grid-template-columns: 1fr;
-            }
-
-            .work__container {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-    </style>
+    <link href="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js" rel="preload" as="script">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" rel="preload" as="script">
 </head>
 <body>
-    <!-- Existing HTML content remains the same -->
-     <!--===== HEADER =====-->
+    <header class="l-header responsive-header">
+        <nav class="nav bd-grid">
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+            
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+                    <li class="nav__item"><a href="#work" class="nav__link">Certification</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
-        <!--=====<body>
-        <script>
-            alert("! This website Backend process going now, Please Don't approach the backend process.");
-        </script>
-       </body>=====-->
-       
-        <header class="l-header">
-            <nav class="nav bd-grid">
-                <div>
-                    <a href="#" class="nav__logo"><span class="home__title-color">GOWTHAM MALLI SIVASANKAR</span></a>
-                </div>
+    <main class="l-main">
+        <section class="home bd-grid" id="home">
+            <div class="home__data">
+                <h1 class="home__title">Hi, I'm <span class="home__title-color">Gowtham M S</span><br>Azure Data Engineer</h1>
+                <a href="https://drive.google.com/file/d/1i2KbjNEe2d47FLUEhV_7BwWm4rmFM-ym/view?usp=sharing" class="button" download>Download Resume</a>
+            </div>
 
-                <div class="nav__menu" id="nav-menu">
-                    <ul class="nav__list">
-                        <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
-                        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
-                        <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
-                        <li class="nav__item"><a href="#work" class="nav__link">Certification</a></li>
-                        <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
-                    </ul>
-                </div>
+            <div class="home__social">
+                <a href="https://www.linkedin.com/in/gowtham-m-s/" class="home__social-icon" target="_blank"><i class='bx bxl-linkedin'></i></a>
+                <a href="https://github.com/gowthamsankar43/" class="home__social-icon" target="_blank"><i class='bx bxl-github'></i></a>
+            </div>
 
-                <div class="nav__toggle" id="nav-toggle">
-                    <i class='bx bx-menu'></i>
-                </div>
-            </nav>
-        </header>
-
-        <main class="l-main">
-            <!--===== HOME =====-->
-            <section class="home bd-grid" id="home">
-                <div class="home__data">
-                    <h1 class="home__title">Hi,<br>I'm <span class="home__title-color">Gowtham M S</span><br>Azure Data Engineer</h1>
-
-                    <a href="https://drive.google.com/file/d/1i2KbjNEe2d47FLUEhV_7BwWm4rmFM-ym/view?usp=sharing" download="Gowtham's Resume" class="button"><i class='bx bx-download'></i> Download Resume</a>
-                    
-                </div>
-
-                <div class="home__social">
-                    <a href="https://www.linkedin.com/in/gowtham-m-s/" class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
-                    <a href="https://github.com/gowthamsankar43/" class="home__social-icon"><i class='bx bxl-github' ></i></a>
-                </div>
-
-                <div class="home__img">    
-                    <img src="/IMG_20231231_113405_727.jpg" alt="">
-                </div>
-            </section>
-
+            <div class="home__img">
+                <img src="IMG_20231231_113405_727.jpg" alt="Gowtham M S">
+            </div>
+        </section>
+        
+        <!-- Rest of the sections remain the same, with minor responsive adjustments -->
+		
             <!--===== ABOUT =====-->
             <section class="about section " id="about">
                 <h2 class="section-title">About</h2>
@@ -216,8 +158,9 @@
                     </form>
                 </div>
             </section>
-        </main>
+    </main>
 
+    <a href="#" id="back2Top" title="Back to top">&uarr;</a>
         <!--===== FOOTER =====-->
         <footer class="footer">
             <address><a href="https://gowthamsankar43.github.io/"><p class="footer__title">GOWTHAM M S</a></address></p>
@@ -226,76 +169,8 @@
             <p>Hosting by Github   <i class="bx bxl-github"></i></p> 
         </footer>
 
-    <!-- Certificate Zoom Modal -->
-    <div id="certificateModal" class="certificate-modal">
-        <img id="modalCertificateImage" class="certificate-modal-content" src="">
-    </div>
-
-    <script>
-        // Mobile Navigation Toggle
-        document.addEventListener('DOMContentLoaded', () => {
-            const navToggle = document.getElementById('nav-toggle');
-            const navMenu = document.getElementById('nav-menu');
-            
-            navToggle.addEventListener('click', () => {
-                navMenu.classList.toggle('show');
-            });
-
-            // Close menu when a nav link is clicked
-            document.querySelectorAll('.nav__link').forEach(link => {
-                link.addEventListener('click', () => {
-                    navMenu.classList.remove('show');
-                });
-            });
-
-            // Certificate Zoom Functionality
-            const certificates = document.querySelectorAll('.work__img img');
-            const modal = document.getElementById('certificateModal');
-            const modalImage = document.getElementById('modalCertificateImage');
-
-            certificates.forEach(cert => {
-                cert.addEventListener('click', () => {
-                    modalImage.src = cert.src;
-                    modal.style.display = 'flex';
-                });
-            });
-
-            // Close modal when clicking outside the image
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    modal.style.display = 'none';
-                }
-            });
-
-            // Prevent zooming on inputs for mobile
-            const inputs = document.querySelectorAll('input, textarea');
-            inputs.forEach(input => {
-                input.addEventListener('focus', () => {
-                    document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale=1');
-                });
-                input.addEventListener('blur', () => {
-                    document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
-                });
-            });
-
-            // Scroll to Top Functionality
-            const scrollToTopBtn = document.createElement('div');
-            scrollToTopBtn.id = 'back2Top';
-            scrollToTopBtn.innerHTML = '↑';
-            scrollToTopBtn.addEventListener('click', () => {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-            document.body.appendChild(scrollToTopBtn);
-
-            // Show/Hide Scroll to Top Button
-            window.addEventListener('scroll', () => {
-                scrollToTopBtn.style.display = window.pageYOffset > 300 ? 'block' : 'none';
-            });
-        });
-    </script>
-
-    <!-- Existing scripts -->
-    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="assets/main.js"></script>
 </body>
 </html>

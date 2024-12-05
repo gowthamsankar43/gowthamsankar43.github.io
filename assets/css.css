@@ -228,3 +228,106 @@ body {
   opacity: 1;
   visibility: visible;
 }
+/* Improved Mobile Responsiveness */
+@media screen and (max-width: 600px) {
+    .bd-grid {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .home {
+        flex-direction: column;
+        height: auto;
+        padding: 1rem;
+    }
+
+    .home__data {
+        text-align: center;
+    }
+
+    .home__img {
+        position: relative;
+        width: 100%;
+        max-width: 300px;
+        margin: 1rem auto;
+        right: auto;
+        bottom: auto;
+    }
+
+    .home__social {
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .skills__container {
+        grid-template-columns: 1fr;
+    }
+
+    .work__container {
+        grid-template-columns: 1fr;
+    }
+
+    .nav__menu {
+        width: 100%;
+        right: -100%;
+    }
+
+    .section-title::after {
+        width: 50px;
+    }
+}
+
+/* Enhanced Tablet Responsiveness */
+@media screen and (min-width: 601px) and (max-width: 1023px) {
+    .bd-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .home__img {
+        width: 350px;
+    }
+
+    .skills__container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .work__container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Improved Large Screen Layout */
+@media screen and (min-width: 1024px) {
+    .home__img {
+        width: 457px;
+        right: 10%;
+    }
+}
+
+/* Responsive Typography */
+@media screen and (max-width: 768px) {
+    :root {
+        --big-font-size: 2.5rem;
+        --h2-font-size: 1.5rem;
+        --normal-font-size: 0.9rem;
+    }
+}
+
+/* Flexbox Fallback for Grid */
+@supports not (display: grid) {
+    .bd-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
+
+/* Ensure Images are Responsive */
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
