@@ -9,7 +9,7 @@ const showMenu = (toggleId, navId) => {
             toggle.setAttribute('aria-expanded', nav.classList.contains('show'));
         });
     }
-}
+};
 showMenu('nav-toggle', 'nav-menu');
 
 // Enhanced navigation link handling with accessibility
@@ -79,19 +79,4 @@ window.addEventListener('scroll', () => {
 });
 
 backToTopButton.addEventListener('click', (event) => {
-    event.preventDefault();
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
-
-// Enhance keyboard accessibility
-document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') {
-        const navMenu = document.getElementById('nav-menu');
-        if (navMenu.classList.contains('show')) {
-            navMenu.classList.remove('show');
-        }
-    }
-});
+    event.preventDefault
