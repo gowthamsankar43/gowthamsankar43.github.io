@@ -60,6 +60,7 @@ header h1 {
     padding: 40px 20px;
 }
 
+
 #showcase {
     background: linear-gradient(rgba(0, 62, 107, 0.8), rgba(0, 98, 166, 0.8)), url('/api/placeholder/1200/400') no-repeat center center/cover;
     height: 400px;
@@ -72,6 +73,15 @@ header h1 {
     margin-bottom: 40px;
     border-radius: 8px;
     box-shadow: var(--card-shadow);
+}
+
+#profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 4px solid white;
 }
 
 #showcase h2 {
@@ -122,17 +132,6 @@ header h1 {
     font-size: 1.8em;
     margin-bottom: 20px;
     font-weight: 400;
-}
-
-#profile-photo {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    margin: 0 auto 20px;
-    display: block;
-    object-fit: cover;
-    border: 4px solid #ffffff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 #skills ul {
@@ -288,14 +287,14 @@ header h1 {
     </header>
 
     <div class="container">
-        <section id="showcase">
-            <img id="profile-photo" src="photo.jpg" alt="Gowtham M S">
-            <h2>Gowtham M S</h2>
-            <p>Azure Data Engineer</p>
-            <div id="showcase-buttons">
-                <a href="https://drive.google.com/file/d/1i2KbjNEe2d47FLUEhV_7BwWm4rmFM-ym/view?usp=sharing" target="_blank">Download Resume</a>
-            </div>
-        </section>
+    <section id="showcase">
+        <img id="profile-photo" src="photo.jpg" alt="Gowtham M S">
+        <h2>Gowtham M S</h2>
+        <p>Azure Data Engineer</p>
+        <div id="showcase-buttons">
+            <a href="https://drive.google.com/file/d/1i2KbjNEe2d47FLUEhV_7BwWm4rmFM-ym/view?usp=sharing" target="_blank">Download Resume</a>
+        </div>
+    </section>
 
         <section id="about" class="section">
             <h2>About Me</h2>
