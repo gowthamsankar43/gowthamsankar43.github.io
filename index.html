@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Azure Data Engineer Portfolio</title>
     <style>
-        :root {
+:root {
             --bg-color: #f5f5f5;
             --text-color: #333333;
             --primary-color: #0062a6;
@@ -350,18 +350,20 @@
 
     <div class="container">
         <section id="showcase">
-            <img id="profile-photo" src="photo.jpg" alt="Your Name">
+            <img id="profile-photo" src="photo.jpg" alt="Gowtham M S">
             <h2>Gowtham M S</h2>
             <p>Azure Data Engineer</p>
-	<a href="https://drive.google.com/file/d/1i2KbjNEe2d47FLUEhV_7BwWm4rmFM-ym/view?usp=sharing" class="button" download>Download Resume</a>
+            <div id="showcase-buttons">
+                <a href="https://drive.google.com/file/d/1i2KbjNEe2d47FLUEhV_7BwWm4rmFM-ym/view?usp=sharing" target="_blank">Download Resume</a>
+            </div>
         </section>
 
         <section id="about" class="section">
             <h2>About Me</h2>
             <p>As a Azure Data Engineer with nearly 3 years of expertise in designing and 
-implementing ETL pipelines using SQL, Azure Data Factory, Databricks, and Data Lake. 
-Proficient in building end-to-end Azure pipelines with Azure DevOps and GitHub, 
-recognized for delivering high-quality outputs and making significant contributions. </p>
+            implementing ETL pipelines using SQL, Azure Data Factory, Databricks, and Data Lake. 
+            Proficient in building end-to-end Azure pipelines with Azure DevOps and GitHub, 
+            recognized for delivering high-quality outputs and making significant contributions.</p>
         </section>
 
         <section id="skills" class="section">
@@ -389,16 +391,16 @@ recognized for delivering high-quality outputs and making significant contributi
         <section id="projects" class="section">
             <h2>Key Projects</h2>
             <div class="project">
-                <h3>Real-time order transation processing Data Pipeline</h3>
+                <h3>Real-time Order Transaction Processing Data Pipeline</h3>
                 <p>Developed a real-time data ingestion and processing pipeline leveraging Confluent Kafka Cluster, Microsoft Fabric Eventstream, Python and PowerBI. This solution processes over 100,000 records per minute, providing real-time insights that improved operational efficiency by 40%.</p>
             </div>
             <div class="project">
-                <h3>Azure DataBricks Data Processing solution</h3>
-                <p>Led the design and implementation of a scalable data lake solution using Azure Data Lake Storage Gen2 and Azure Databricks with support to process many types of data and utilized the factory pattern solution to generate the insights of the data.</p>
+                <h3>Azure Databricks Data Processing Solution</h3>
+                <p>Led the design and implementation of a scalable data lake solution using Azure Data Lake Storage Gen2 and Azure Databricks with support to process many types of data and utilized the factory pattern solution to generate insights of the data.</p>
             </div>
         </section>
 
-<section id="contact" class="section">
+        <section id="contact" class="section">
             <h2>Connect With Me</h2>
             <div class="contact-section">
                 <div class="contact-item">
@@ -409,33 +411,36 @@ recognized for delivering high-quality outputs and making significant contributi
                 </div>
             </div>
         </section>
+
+        <section class="contact section">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact__container bd-grid">
+                <form action="https://formsubmit.co/212ae1cb12a2db7f323b098304e6668a" method="POST" class="contact__form">
+                    <input type="hidden" name="_subject" value="New submission from portfolio website">
+                    <input type="hidden" name="_next" value="https://gowthamsankar43.github.io/Thank-you/Design.png">
+                    <input type="text" name="Name" placeholder="Please enter your name" class="contact__input" required>
+                    <input type="email" name="email" placeholder="Please enter your email" class="contact__input" required>
+                    <textarea name="message" placeholder="Write your message here" cols="0" rows="10" class="contact__input" required></textarea>
+                    <button class="contact__button button" type="submit">Send</button>
+                </form>
+            </div>
+        </section>
     </div>
 
-              <section class="contact section" id="contact">
-                <h2 class="section-title">Contact</h2>
-
-                <div class="contact__container bd-grid">
-                    <form action="https://formsubmit.co/212ae1cb12a2db7f323b098304e6668a" method="POST" class="contact__form">
-                        <input type="hidden" name="_subject" value="New submission form wooooo!">
-                        <input type="hidden" name="_next" value="https://gowthamsankar43.github.io/Thank-you/Design.png">
-                        <input type="text" name="Name" placeholder="Please enter your name" class="contact__input" required>
-                        <input type="mail" name="email" placeholder="Please enter your email" class="contact__input" required>
-                        <textarea type="text" name="message" placeholder="Write your message here." id="" cols="0" rows="10" class="contact__input" required></textarea>
-                        <button class="contact__button button" type="submit">send on</button>
-                    </form>
-                </div>
-		 </section>
     <a href="#" id="back2Top" title="Back to top">&uarr;</a>
-        <!--===== FOOTER =====-->
-        <footer class="footer">
-            <address><a href="https://gowthamsankar43.github.io/"><p class="footer__title">GOWTHAM M S</a></address></p>
 
-            <a class="footer__icon"><i class='bx bx-code'>with Gowtham M S</i></a>
-            <p>Hosting by Github   <i class="bx bxl-github"></i></p> 
-        </footer>
+    <footer class="footer">
+        <address>
+            <a href="https://gowthamsankar43.github.io/">
+                <p class="footer__title">GOWTHAM M S</p>
+            </a>
+        </address>
+        <p>Created with ❤️ by Gowtham M S</p>
+        <p>Hosting by GitHub</p>
+    </footer>
 
     <script>
-        // Theme Toggle (previous script remains the same)
+        // Theme Toggle
         const themeToggle = document.getElementById('theme-toggle');
         const body = document.body;
 
@@ -444,48 +449,25 @@ recognized for delivering high-quality outputs and making significant contributi
             themeToggle.textContent = body.classList.contains('dark-theme') ? 'Light Theme' : 'Dark Theme';
         });
 
-        // Email Modal Functionality
-        const messageButton = document.getElementById('message-button');
-        const emailModal = document.getElementById('email-modal');
-        const modalClose = document.querySelector('.modal-close');
-        const emailForm = document.getElementById('email-form');
-
-        messageButton.addEventListener('click', () => {
-            emailModal.style.display = 'block';
-        });
-
-        modalClose.addEventListener('click', () => {
-            emailModal.style.display = 'none';
-        });
-
-        window.addEventListener('click', (event) => {
-            if (event.target === emailModal) {
-                emailModal.style.display = 'none';
+        // Back to Top Button
+        const back2Top = document.getElementById('back2Top');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 100) {
+                back2Top.style.display = 'block';
+            } else {
+                back2Top.style.display = 'none';
             }
         });
 
-        emailForm.addEventListener('submit', (event) => {
-            event.preventDefault();
-            
-            const name = document.getElementById('sender-name').value;
-            const email = document.getElementById('sender-email').value;
-            const message = document.getElementById('message-content').value;
-
-            // In a real-world scenario, you would send this data to a backend service
-            // For this example, we'll just show an alert
-            alert('Message sent successfully!\n\n' + 
-                  'Name: ' + name + '\n' +
-                  'Email: ' + email + '\n' +
-                  'Message: ' + message);
-            
-            // Clear the form
-            emailForm.reset();
-            
-            // Close the modal
-            emailModal.style.display = 'none';
+        back2Top.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
 
-        // Existing scroll and animation scripts (previous script remains the same)
+        // Skill Animation
         window.addEventListener('scroll', function() {
             const skills = document.querySelectorAll('#skills li');
             skills.forEach(skill => {
