@@ -286,6 +286,7 @@
             <img id="profile-photo" src="photo.jpg" alt="Your Name">
             <h2>Gowtham M S</h2>
             <p>Azure Data Engineer</p>
+	<a href="https://drive.google.com/file/d/1i2KbjNEe2d47FLUEhV_7BwWm4rmFM-ym/view?usp=sharing" class="button" download>Download Resume</a>
         </section>
 
         <section id="about" class="section">
@@ -349,21 +350,31 @@ recognized for delivering high-quality outputs and making significant contributi
         </section>
     </div>
 
-    <!-- Email Modal -->
-    <div id="email-modal">
-        <div class="modal-content">
-            <span class="modal-close">&times;</span>
-            <h2>Send a Message</h2>
-            <form id="email-form">
-                <input type="text" id="sender-name" placeholder="Your Name" required>
-                <input type="email" id="sender-email" placeholder="Your Email" required>
-                <textarea id="message-content" placeholder="Your Message" rows="5" required></textarea>
-                <button type="submit" class="message-button">Send Message</button>
-            </form>
-        </div>
-    </div>
-   </div>
+              <section class="contact section" id="contact">
+                <h2 class="section-title">Contact</h2>
+
+                <div class="contact__container bd-grid">
+                    <form action="https://formsubmit.co/212ae1cb12a2db7f323b098304e6668a" method="POST" class="contact__form">
+                        <input type="hidden" name="_subject" value="New submission form wooooo!">
+                        <input type="hidden" name="_next" value="https://gowthamsankar43.github.io/Thank-you/Design.png">
+                        <input type="text" name="Name" placeholder="Please enter your name" class="contact__input" required>
+                        <input type="mail" name="email" placeholder="Please enter your email" class="contact__input" required>
+                        <textarea type="text" name="message" placeholder="Write your message here." id="" cols="0" rows="10" class="contact__input" required></textarea>
+                        <button class="contact__button button" type="submit">send on</button>
+                    </form>
+                </div>
+		 </section>
+    <a href="#" id="back2Top" title="Back to top">&uarr;</a>
+        <!--===== FOOTER =====-->
+        <footer class="footer">
+            <address><a href="https://gowthamsankar43.github.io/"><p class="footer__title">GOWTHAM M S</a></address></p>
+
+            <a class="footer__icon"><i class='bx bx-code'>with Gowtham M S</i></a>
+            <p>Hosting by Github   <i class="bx bxl-github"></i></p> 
+        </footer>
+
     <script>
+        // Theme Toggle (previous script remains the same)
         const themeToggle = document.getElementById('theme-toggle');
         const body = document.body;
 
@@ -412,6 +423,8 @@ recognized for delivering high-quality outputs and making significant contributi
             // Close the modal
             emailModal.style.display = 'none';
         });
+
+        // Existing scroll and animation scripts (previous script remains the same)
         window.addEventListener('scroll', function() {
             const skills = document.querySelectorAll('#skills li');
             skills.forEach(skill => {
