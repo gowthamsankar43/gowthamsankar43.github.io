@@ -464,6 +464,46 @@ nav {
         .project-links a:hover {
             background-color: var(--secondary-color);
         }
+ .project-details {
+            background-color: var(--bg-color);
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .project-tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .tech-badge {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8em;
+        }
+
+        .project-screenshots {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .project-screenshots img {
+            max-width: 200px;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .project-screenshots img:hover {
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body>
@@ -537,6 +577,29 @@ nav {
             <div class="project">
                 <h3>Real-time Order Transaction Processing Data Pipeline</h3>
                 <p>Developed a real-time data ingestion and processing pipeline leveraging Confluent Kafka Cluster, Microsoft Fabric Eventstream, Python and PowerBI. This solution processes over 100,000 records per minute, providing real-time insights that improved operational efficiency by 40%.</p>
+				
+                <div class="project-details">
+                    <h4>Project Highlights:</h4>
+                    <ul>
+                        <li>Implemented a scalable solution processing 100,000+ records per minute</li>
+                        <li>Achieved 40% improvement in operational efficiency</li>
+                        <li>Built end-to-end real-time data processing ecosystem</li>
+                    </ul>
+
+                    <div class="project-tech-stack">
+                        <span class="tech-badge">Confluent Kafka</span>
+                        <span class="tech-badge">Microsoft Fabric</span>
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">PowerBI</span>
+                        <span class="tech-badge">Azure Event Hubs</span>
+                    </div>
+
+                    <div class="project-screenshots">
+                        <img src="/api/placeholder/200/150" alt="Data Pipeline Architecture">
+                        <img src="/api/placeholder/200/150" alt="PowerBI Dashboard">
+                    </div>
+                </div>
+
                 <div class="project-links">
                     <a href="https://github.com/gowthamsankar43/Real-Time-Transaction-Data-Pipeline" target="_blank">GitHub Repository</a>
                     <a href="#" target="_blank">Project Documentation</a>
@@ -545,6 +608,29 @@ nav {
             <div class="project">
                 <h3>Azure Databricks Data Processing Solution</h3>
                 <p>Led the design and implementation of a scalable data lake solution using Azure Data Lake Storage Gen2 and Azure Databricks with support to process many types of data and utilized the factory pattern solution to generate insights of the data.</p>
+				   
+                <div class="project-details">
+                    <h4>Project Highlights:</h4>
+                    <ul>
+                        <li>Created a flexible data processing framework using factory pattern</li>
+                        <li>Implemented multi-format data ingestion (structured, semi-structured, unstructured)</li>
+                        <li>Developed robust data governance and quality control mechanisms</li>
+                    </ul>
+
+                    <div class="project-tech-stack">
+                        <span class="tech-badge">Azure Databricks</span>
+                        <span class="tech-badge">Azure Data Lake Storage Gen2</span>
+                        <span class="tech-badge">PySpark</span>
+                        <span class="tech-badge">Delta Lake</span>
+                        <span class="tech-badge">Azure Synapse</span>
+                    </div>
+
+                    <div class="project-screenshots">
+                        <img src="/api/placeholder/200/150" alt="Data Lake Architecture">
+                        <img src="/api/placeholder/200/150" alt="Data Processing Workflow">
+                    </div>
+                </div>
+
                 <div class="project-links">
                     <a href="https://github.com/gowthamsankar43/Azure-Databricks-Data-Processing" target="_blank">GitHub Repository</a>
                     <a href="#" target="_blank">Project Architecture</a>
