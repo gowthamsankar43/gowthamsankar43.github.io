@@ -1075,6 +1075,32 @@ document.addEventListener('DOMContentLoaded', () => {
                 navMenu.classList.remove('active');
             });
         });
+		
+		// Smooth Scrolling for Navigation Links
+document.querySelectorAll('.nav__link').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Get the target section ID from the href attribute
+        const targetId = this.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+        
+        if (targetSection) {
+            // Smooth scroll to the section
+            targetSection.scrollIntoView({
+                behavior: 'smooth'
+            });
+
+            // Close mobile menu if it's open
+            const navToggle = document.querySelector('.nav__toggle');
+            const navMenu = document.querySelector('.nav__menu');
+            if (navToggle && navMenu) {
+                navToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        }
+    });
+});
     </script>
 </body>
 </html>
